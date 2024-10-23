@@ -8,6 +8,11 @@ import { errorMiddleware } from "./middlewares/error.js";
 import messageRouter from "./router/messageRouter.js";
 import userRouter from "./router/userRouter.js";
 import appointmentRouter from "./router/appointmentRouter.js";
+import dotenv from 'dotenv'
+
+dotenv.config({
+  path : './.env'
+})
 
 const app = express();
 config({ path: "./config.env" });

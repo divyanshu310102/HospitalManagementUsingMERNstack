@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/login",
+          "/api/v1/user/login",
           { email, password, confirmPassword, role: "Patient" },
           {
             withCredentials: true,
@@ -26,6 +26,7 @@ const Login = () => {
           }
         )
         .then((res) => {
+          console.log(res)
           toast.success(res.data.message);
           setIsAuthenticated(true);
           navigateTo("/");

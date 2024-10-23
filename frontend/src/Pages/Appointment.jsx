@@ -5,11 +5,15 @@ import AppointmentForm from "../components/AppointmentForm";
 const Appointment = () => {
   return (
     <>
-      <Hero
-        title={"Schedule Your Appointment | ZeeCare Medical Institute"}
+    
+     
+     <Hero
+        title={"Schedule Your Appointment | FirstCry Medical Institute"}
         imageUrl={"/signin.png"}
       />
+   
       <AppointmentForm/>
+    
     </>
   );
 };

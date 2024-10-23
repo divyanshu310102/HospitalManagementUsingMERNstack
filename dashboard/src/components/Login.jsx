@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Context } from "../main";
 import axios from "axios";
+import logo from '/logo.png'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/login",
+          "/api/v1/user/login",
           { email, password, confirmPassword, role: "Admin" },
           {
             withCredentials: true,
@@ -45,8 +46,8 @@ const Login = () => {
   return (
     <>
       <section className="container form-component">
-        <img src="/logo.png" alt="logo" className="logo" />
-        <h1 className="form-title">WELCOME TO ZEECARE</h1>
+        <img src={logo} alt="logo" className="logo" />
+        <h1 className="form-title">WELCOME TO FirstCry</h1>
         <p>Only Admins Are Allowed To Access These Resources!</p>
         <form onSubmit={handleLogin}>
           <input

@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Context } from "../main";
+import logo from '/logo.png'
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/patient/logout", {
+      .get("/api/v1/user/patient/logout", {
         withCredentials: true,
       })
       .then((res) => {
@@ -33,7 +34,7 @@ const Navbar = () => {
     <>
       <nav className={"container"}>
         <div className="logo">
-          <img src="/logo.png" alt="logo" className="logo-img" />
+          <img src={logo} alt="logo" className="logo-img" />
         </div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
           <div className="links">

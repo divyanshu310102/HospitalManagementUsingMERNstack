@@ -11,7 +11,7 @@ const Messages = () => {
     const fetchMessages = async () => {
       try {
         const { data } = await axios.get(
-          "/api/v1/message/getall",
+          `${import.meta.env.VITE_BACKEND_URI}/api/v1/message/getall`,
           { withCredentials: true }
         );
         setMessages(data.messages);
